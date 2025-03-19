@@ -32,7 +32,7 @@ namespace CWCompil.State
 
         private void ErrorNeutralizer(StateMachine sm)
         {
-            sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым терминалом. Ожидаемый терминал \"Console\"!\n";
+            sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \"Console\"!\n";
             sm.State = new ConsoleState();
         }
     }

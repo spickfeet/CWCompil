@@ -35,12 +35,14 @@ namespace CWCompil.State
         {
             if (sm.Tokens[sm.CurrentTokenIndex] == "Console")
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым терминалом. Ожидаемый терминал \"(\"!\n";
+                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \"(\"!\n" +
+                    $"Строка: {sm.Line}. Ошибка: Не хватает \")\"!\n" +
+                    $"Строка: {sm.Line}. Ошибка: Не хватает \";\"!\n";
                 sm.State = new ConsoleState();
             }
             else
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым терминалом. Ожидаемый терминал \"(\"!\n";
+                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \"(\"!\n";
                 sm.State = new OpenBracketState();
             }
         }

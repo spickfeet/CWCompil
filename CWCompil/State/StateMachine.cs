@@ -15,11 +15,16 @@ namespace CWCompil.State
         public int CurrentTokenIndex { get; set; }
         public string ErrorsText { get; set; }
         public int Line {  get; set; }
+        public StateMachine()
+        {
+            Tokens = new List<string>();
+            State = new StartState();
+        }
         public void Start(string text)
         {
-            IsStopped = false;
-            State = new StartState();
-            Tokens = new List<string>();
+            CurrentTokenIndex = 0;
+            Tokens.Clear();
+            IsStopped = false;  
             ErrorsText = "";
             Line = 1;
             string pattern = @"[^\s\.();]+|\.|\(|\)|;|\s";
@@ -31,11 +36,11 @@ namespace CWCompil.State
             }
             for (; IsStopped == false; CurrentTokenIndex++) 
             {
+                State.Enter(this);
                 if (CurrentTokenIndex < Tokens .Count && Tokens[CurrentTokenIndex] == "\n")
                 {
                     Line++;
                 }
-                State.Enter(this);
             }
         }
     }
