@@ -33,19 +33,23 @@ namespace CWCompil.State
 
         private void ErrorNeutralizer(StateMachine sm)
         {
-            if(sm.Tokens[sm.CurrentTokenIndex] == "Console")
+            if (sm.Tokens[sm.CurrentTokenIndex] == "Console")
             {
                 sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \".\"!\n" +
                     $"Строка: {sm.Line}. Ошибка: Не хватает \"ReadLine\"!\n" +
                     $"Строка: {sm.Line}. Ошибка: Не хватает \"(\"!\n" +
                     $"Строка: {sm.Line}. Ошибка: Не хватает \")\"!\n" +
                     $"Строка: {sm.Line}. Ошибка: Не хватает \";\"!\n";
+                return;
             }
-            else
+            sm.State = new PointState();
+            if (sm.Tokens[sm.CurrentTokenIndex] == "ReadLine" || sm.Tokens[sm.CurrentTokenIndex] == "(")
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \".\"!\n";
-                sm.State = new PointState();
+                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \".\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
+                sm.State.Enter(sm);
+                return;
             }
+            sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \".\"!\n";
         }
     }
 }

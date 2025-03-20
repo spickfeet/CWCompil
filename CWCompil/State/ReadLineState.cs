@@ -39,12 +39,16 @@ namespace CWCompil.State
                     $"Строка: {sm.Line}. Ошибка: Не хватает \")\"!\n" +
                     $"Строка: {sm.Line}. Ошибка: Не хватает \";\"!\n";
                 sm.State = new ConsoleState();
+                return;
             }
-            else
+            sm.State = new OpenBracketState();
+            if (sm.Tokens[sm.CurrentTokenIndex] == ")" || sm.Tokens[sm.CurrentTokenIndex] == ";")
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \"(\"!\n";
-                sm.State = new OpenBracketState();
+                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \"(\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
+                sm.State.Enter(sm);
+                return;
             }
+            sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \"(\"!\n";
         }
     }
 }

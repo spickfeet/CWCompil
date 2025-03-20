@@ -32,8 +32,16 @@ namespace CWCompil.State
 
         private void ErrorNeutralizer(StateMachine sm)
         {
-            sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \"Console\"!\n";
             sm.State = new ConsoleState();
+            if (sm.Tokens[sm.CurrentTokenIndex] == "." || sm.Tokens[sm.CurrentTokenIndex] == "ReadLine" /*|| sm.Tokens[sm.CurrentTokenIndex] == "(" ||
+                sm.Tokens[sm.CurrentTokenIndex] == ")" || sm.Tokens[sm.CurrentTokenIndex] == ";"*/)
+            {
+                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \"Console\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
+                sm.State.Enter(sm);
+                return;
+            }
+
+            sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \"Console\"!\n";
         }
     }
 }
