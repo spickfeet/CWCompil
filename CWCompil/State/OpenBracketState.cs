@@ -12,12 +12,12 @@ namespace CWCompil.State
         {
             if (sm.CurrentTokenIndex >= sm.Tokens.Count)
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \")\"!\n";
-                sm.State = new CloseBracketState();
+                ErrorNeutralizer(sm);
                 return;
             }
             if (sm.Tokens[sm.CurrentTokenIndex] == ")")
             {
+                sm.CountDel = 0;
                 sm.State = new CloseBracketState();
             }
             else if (sm.Tokens[sm.CurrentTokenIndex] == "\n" || sm.Tokens[sm.CurrentTokenIndex] == "\t" ||
@@ -30,24 +30,53 @@ namespace CWCompil.State
                 ErrorNeutralizer(sm);
             }
         }
-
+        private void NeutralizerAddOrChangeError(StateMachine sm, string[] tokens)
+        {
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                if (sm.CountDel > tokens.Length)
+                {
+                    sm.CountDel = tokens.Length;
+                }
+                if (sm.CountDel != 0)
+                {
+                    sm.ErrorsData[sm.ErrorsData.Count - sm.CountDel].Text = sm.ErrorsData[sm.ErrorsData.Count - sm.CountDel].Text.Replace("Отбрасывается", $"Заменяется на \"{tokens[i]}\"");
+                    sm.CountDel--;
+                }
+                else
+                {
+                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), sm.CurrentTokenIndex < sm.Tokens.Count ? $"Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}" :
+                         $"В конце ожидается \"{tokens[i]}\""));
+                }
+            }
+        }
         private void ErrorNeutralizer(StateMachine sm)
         {
-            if (sm.Tokens[sm.CurrentTokenIndex] == "Console")
+            if (sm.CurrentTokenIndex >= sm.Tokens.Count)
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \")\"!\n" +
-                    $"Строка: {sm.Line}. Ошибка: Не хватает \";\"!\n";
-                sm.State = new ConsoleState();
+                string[] tokens = { ")", ";" };
+                NeutralizerAddOrChangeError(sm, tokens);
+                sm.State = new StartState();
                 return;
             }
-            sm.State = new CloseBracketState();
-            if (sm.Tokens[sm.CurrentTokenIndex] == ";" || sm.Tokens[sm.CurrentTokenIndex] == "Console")
+            if (sm.Tokens[sm.CurrentTokenIndex] == "Console")
             {
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Не хватает \")\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
+                string[] tokens = { ")", ";" };
+                NeutralizerAddOrChangeError(sm, tokens);
+                sm.State = new StartState();
                 sm.State.Enter(sm);
                 return;
             }
-                sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: \"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. Ожидаемый терминал \")\"!\n";
+            if (sm.Tokens[sm.CurrentTokenIndex] == ";")
+            {
+                string[] tokens = { ")" };
+                NeutralizerAddOrChangeError(sm, tokens);
+                sm.State = new CloseBracketState();
+                sm.State.Enter(sm);
+                return;
+            }
+            sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), $"\"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. (Отбрасывается)"));
+            sm.CountDel++;
         }
     }
 }

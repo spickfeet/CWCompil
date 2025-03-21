@@ -189,8 +189,15 @@ namespace CWCompil.ViewModel
                 {
                     StateMachine sm = new();
                     sm.Start(TextInput);
-                    
-                    DebugText = sm.ErrorsText.Length > 0 ? sm.ErrorsText : "Ошибок нет";
+                    DebugText = "";
+                    if (sm.ErrorsData.Count == 0)
+                    {
+                        DebugText = "Ошибок нет";
+                    }
+                    foreach(ErrorData errorData in sm.ErrorsData)
+                    {
+                        DebugText += $"Строка: {errorData.Line} Глобальный индекс: {errorData.GlobalIndex} Ошибка {errorData.Text} \n";
+                    }
                 });
             }
         }

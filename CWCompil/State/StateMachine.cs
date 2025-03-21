@@ -13,23 +13,37 @@ namespace CWCompil.State
         public IState State { get; set; }
         public List<string> Tokens { get; set; }
         public int CurrentTokenIndex { get; set; }
-        public string ErrorsText { get; set; }
+        public List<ErrorData> ErrorsData {  get; set; }
+        public int CountDel { get; set; }
         public int Line {  get; set; }
         public StateMachine()
         {
+            ErrorsData = new();
             Tokens = new List<string>();
             State = new StartState();
         }
+        public int GetIndexOfCurrentToken()
+        {
+            int index = 0;
+            for (int i = 0; i < CurrentTokenIndex; i++) 
+            {
+                index += Tokens[i].Length;
+            }
+            return index;
+        }
         public void Start(string text)
         {
+            CountDel = 0;
             CurrentTokenIndex = 0;
             Tokens.Clear();
-            IsStopped = false;  
-            ErrorsText = "";
+            IsStopped = false;
+            ErrorsData.Clear();
             Line = 1;
+
             string pattern = @"[^\s\.();]+|\.|\(|\)|;|\s";
             Regex regex = new Regex(pattern);
             MatchCollection matches = regex.Matches(text);
+
             foreach (Match match in matches)
             {
                 Tokens.Add(match.Value);

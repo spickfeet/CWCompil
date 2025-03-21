@@ -74,9 +74,9 @@
                 <Image Source="resource/right-arrow.png" Stretch="Uniform"/>
             </Button>
         </StackPanel>
-
-        <TextBox x:Name="textBox1" Grid.Row="2" Margin="20, 10, 20, 10" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Text="{Binding TextInput,UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <TextBox x:Name="textBox2" Grid.Row="3" IsReadOnly="True" Margin="20, 10, 20, 10" Background="White" Text="{Binding DebugText,UpdateSourceTrigger=PropertyChanged}" VerticalScrollBarVisibility="Auto" ></TextBox>
+        
+        <TextBox x:Name="textBox1" Grid.Row="2" FontSize="20" Margin="20, 10, 20, 10" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Text="{Binding TextInput,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="textBox2" TextWrapping="WrapWithOverflow" Grid.Row="3" FontSize="20" IsReadOnly="True" Margin="20, 10, 20, 10" Background="White" Text="{Binding DebugText,UpdateSourceTrigger=PropertyChanged}" VerticalScrollBarVisibility="Auto" ></TextBox>
 
     </Grid>
 </Window>
