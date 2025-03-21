@@ -45,7 +45,7 @@ namespace CWCompil.State
                 }
                 else
                 {
-                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), sm.CurrentTokenIndex < sm.Tokens.Count ? $"Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}" :
+                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), sm.CurrentTokenIndex < sm.Tokens.Count ? $"Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"" :
                          $"В конце ожидается \"{tokens[i]}\""));
                 }
             }
@@ -67,6 +67,23 @@ namespace CWCompil.State
                 sm.State.Enter(sm);
                 return;
             }
+            if (sm.Tokens[sm.CurrentTokenIndex] == ".")
+            {
+                string[] tokens = { ";" };
+                NeutralizerAddOrChangeError(sm, tokens);
+                sm.State = new StartState();
+                sm.State.Enter(sm);
+                return;
+            }
+            if (sm.Tokens[sm.CurrentTokenIndex] == "ReadLine")
+            {
+                string[] tokens = { ";" };
+                NeutralizerAddOrChangeError(sm, tokens);
+                sm.State = new StartState();
+                sm.State.Enter(sm);
+                return;
+            }
+
             sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), $"\"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. (Отбрасывается)"));
             sm.CountDel++;
         }

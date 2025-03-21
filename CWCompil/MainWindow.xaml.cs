@@ -28,9 +28,34 @@ namespace CWCompil
         {
             InitializeComponent();
             DataContext = new MainWindowVM();
+            undo.IsEnabled = false;
+            redo.IsEnabled = false;
+            if (DataContext is MainWindowVM vm)
+            {
+                vm.TextChanged += CanUndoRedo;
+            }
+
         }
 
-
+        private void CanUndoRedo()
+        {
+            if (textBox1.CanUndo)
+            {
+                undo.IsEnabled = true;
+            }
+            else
+            {
+                undo.IsEnabled = false;
+            }
+            if (textBox1.CanRedo)
+            {
+                redo.IsEnabled = true;
+            }
+            else
+            {;
+                redo.IsEnabled = false;
+            }
+        }
         void WindowClosing(object sender, CancelEventArgs e)
         {
             if (DataContext is MainWindowVM vm)
@@ -67,6 +92,10 @@ namespace CWCompil
         {
             textBox1.Clear();
             textBox2.Clear();
+        }
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void Help(object sender, RoutedEventArgs e)

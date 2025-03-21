@@ -45,7 +45,7 @@ namespace CWCompil.State
                 }
                 else
                 {
-                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), sm.CurrentTokenIndex < sm.Tokens.Count ? $"Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}" :
+                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), sm.CurrentTokenIndex < sm.Tokens.Count ? $"Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"" :
                          $"В конце ожидается \"{tokens[i]}\""));
                 }
             }

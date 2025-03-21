@@ -26,6 +26,7 @@ namespace CWCompil.ViewModel
             {
                 Set(ref _textInput, value);
                 _fileSaved = false;
+                TextChanged?.Invoke();
             }
         }
         
@@ -37,7 +38,7 @@ namespace CWCompil.ViewModel
                 Set(ref _debugText, value);
             }
         }
-
+        public Action TextChanged;
         public Action<string> PathChanged;
         public MainWindowVM()
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800" 
+        Title="Парсер" Height="550" Width="800" 
         Closing="WindowClosing">
 
     <Grid Background="GhostWhite">
@@ -22,7 +22,7 @@
                 <MenuItem Header="Открыть" Command="{Binding OpenCommand}"></MenuItem>
                 <MenuItem Header="Сохранить" Command="{Binding SaveCommand}"></MenuItem>
                 <MenuItem Header="Сохранить как" Command="{Binding SaveAsCommand}"></MenuItem>
-                <MenuItem Header="Выход"></MenuItem>
+                <MenuItem Header="Выход" Click="Close"></MenuItem>
             </MenuItem>
             <MenuItem Header="Правка">
                 <MenuItem Header="Отменить" Click="Undo"></MenuItem>
@@ -34,8 +34,8 @@
             </MenuItem>
             <MenuItem Header="Текст">
             </MenuItem>
-            <MenuItem Header="Пуск">
-            </MenuItem>
+            <MenuItem Header="Пуск" Command="{Binding Start}"/>
+            
             <MenuItem Header="Справка">
                 <MenuItem Header="Вызов справки" Click="Help"></MenuItem>
                 <MenuItem Header="О программе"></MenuItem>
@@ -52,10 +52,10 @@
             <Button Width="60" Margin="5 5 5 5" Background="White" Command="{Binding SaveCommand}">
                 <Image Source="resource/save.png" Stretch="Uniform"/>
             </Button>
-            <Button Width="60" Margin="40 5 5 5" Background="White" Click="Undo">
+            <Button x:Name="undo" Width="60" Margin="40 5 5 5" Background="White" Click="Undo">
                 <Image Source="resource/arrow.png" Stretch="Uniform"/>
             </Button>
-            <Button Width="60" Margin="5 5 5 5" Background="White" Click="Redo">
+            <Button x:Name="redo" Width="60" Margin="5 5 5 5" Background="White" Click="Redo">
                 <Image Source="resource/right-arrow.png" Stretch="Uniform"/>
             </Button>
             <Button Width="60" Margin="5 5 5 5" Background="White" Click="Copy">
@@ -70,8 +70,8 @@
             <Button Width="60" Margin="5 5 5 5" Background="White" Click="Clear">
                 <Image Source="resource/broom.png" Stretch="Uniform"/>
             </Button>
-            <Button Width="60" Margin="5 5 5 5" Background="Green" Command="{Binding Start}">
-                <Image Source="resource/right-arrow.png" Stretch="Uniform"/>
+            <Button Width="60" Margin="5 5 5 5" Background="White" Command="{Binding Start}">
+                <Image Source="resource/start.png" Stretch="Uniform"/>
             </Button>
         </StackPanel>
         
