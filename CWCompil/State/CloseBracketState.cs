@@ -20,8 +20,7 @@ namespace CWCompil.State
                 sm.CountDel = 0;
                 sm.State = new StartState();
             }
-            else if (sm.Tokens[sm.CurrentTokenIndex] == "\n" || sm.Tokens[sm.CurrentTokenIndex] == "\t" ||
-                sm.Tokens[sm.CurrentTokenIndex] == "\r" || sm.Tokens[sm.CurrentTokenIndex] == " ")
+            else if (string.IsNullOrWhiteSpace(sm.Tokens[sm.CurrentTokenIndex]))
             {
                 return;
             }

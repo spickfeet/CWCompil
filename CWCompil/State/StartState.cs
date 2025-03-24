@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CWCompil.State
 {
@@ -20,8 +21,7 @@ namespace CWCompil.State
                 sm.CountDel = 0;
                 sm.State = new ConsoleState();
             }
-            else if (sm.Tokens[sm.CurrentTokenIndex] == "\n" || sm.Tokens[sm.CurrentTokenIndex] == "\t" ||
-                sm.Tokens[sm.CurrentTokenIndex] == "\r" || sm.Tokens[sm.CurrentTokenIndex] == " ")
+            else if (string.IsNullOrWhiteSpace(sm.Tokens[sm.CurrentTokenIndex]))
             {
                 return;
             }

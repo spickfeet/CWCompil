@@ -42,6 +42,7 @@ namespace CWCompil.ViewModel
         public Action<string> PathChanged;
         public MainWindowVM()
         {
+            _textInput = "";
             _fileSaved = true;
             _fileWorker = new();
             PathChanged += _fileWorker.OnPathChanged;
