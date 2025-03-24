@@ -30,7 +30,7 @@ namespace CWCompil.State
                 index += Tokens[i].Length;
             }
             return index;
-        }
+        } 
         public void Start(string text)
         {
             CountDel = 0;
@@ -40,13 +40,14 @@ namespace CWCompil.State
             ErrorsData.Clear();
             Line = 1;
 
-            string pattern = @"[^\s\.();]+|\.|\(|\)|;|\s";
+            //string pattern = @"Console|ReadLine|((?!(ReadLine|Console))[^\s\.();])+|\.|\(|\)|;|\s";
+            string pattern = @"Console|ReadLine|((?!(ReadLine|Console))[^\.();])+|\.|\(|\)|;";
             Regex regex = new Regex(pattern);
             MatchCollection matches = regex.Matches(text);
 
-            foreach (Match match in matches)
+            for (int i = 0; i < matches.Count; i++)
             {
-                Tokens.Add(match.Value);
+                Tokens.Add(matches[i].Value);
             }
             for (; IsStopped == false; CurrentTokenIndex++) 
             {
