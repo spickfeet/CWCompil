@@ -45,7 +45,7 @@ namespace CWCompil.State
                 }
                 else
                 {
-                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), $" Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\""));
+                    sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken() + sm.Offsets[sm.CurrentTokenIndex], $" Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\""));
                 }
             }
         }
@@ -134,7 +134,7 @@ namespace CWCompil.State
             //        $"Строка: {sm.Line}. Ошибка: Ожидается \")\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
             //    return;
             //}
-            sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), $"\"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. (Отбрасывается)"));
+            sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken() + sm.Offsets[sm.CurrentTokenIndex], $"\"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. (Отбрасывается)"));
             sm.CountDel++;
         }
     }
