@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <title>Метод анализа грамматики Console.ReadLine()</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .analysis-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .graph-container {
+            margin: 25px 0;
+            padding: 20px;
+            background-color: #f5f9ff;
+            border: 1px dashed #3498db;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .graph-placeholder {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .legend {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .solid-line {
+            width: 30px;
+            height: 2px;
+            background-color: #000000;
+            margin-right: 10px;
+        }
+        .dashed-line {
+            width: 30px;
+            height: 2px;
+            background: repeating-linear-gradient(to right, #000000, #000000 3px, transparent 3px, transparent 6px);
+            margin-right: 10px;
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Метод анализа</h2>
+        
+        <div class="analysis-section">
+            <p>Грамматика <span class="math">G[‹Con›]</span> является <span class="automaton-type">автоматной</span>.</p>
+            <p>Правила для <span class="math">G[‹Con›]</span> реализованы на графе.</p>
+            
+            <div class="graph-container">
+                <!-- Место для вставки изображения графа -->
+<img src="./images/Граф.png" alt="Изображение">
+
+                
+                <!-- Легенда графа -->
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="solid-line"></div>
+                        <span>Сплошные стрелки - синтаксически верный разбор</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="dashed-line"></div>
+                        <span>Пунктирные стрелки - состояние ошибки (ERROR)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Состояние 7 символизирует успешное завершение разбора.</p>
+        </div>
+    </div>
+</body>
+</html>

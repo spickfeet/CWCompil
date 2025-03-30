@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <title>Классификация грамматики Console.ReadLine()</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .grammar-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .production {
+            font-family: Consolas, monospace;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #2980b9;
+        }
+        .definition {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .math {
+            font-style: italic;
+        }
+        .automaton-type {
+            color: #d81b60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Классификация грамматики</h2>
+        
+        <div class="grammar-section">
+            <div class="definition">
+                <p>Согласно классификации Хомского, грамматика <span class="math">G[‹Con›]</span> является <span class="automaton-type">автоматной</span>.</p>
+            </div>
+
+            <div class="production">&lt;Con&gt; &DoubleRightArrow; Console&lt;Point&gt;</div>
+            <div class="production">&lt;Point&gt; &DoubleRightArrow; .&lt;ReadLn&gt;</div>
+            <div class="production">&lt;ReadLn&gt; &DoubleRightArrow; ReadLine&lt;OpenBr&gt;</div>
+            <div class="production">&lt;OpenBr&gt; &DoubleRightArrow; (&lt;CloseBr&gt;</div>
+            <div class="production">&lt;CloseBr&gt; &DoubleRightArrow; )&lt;End&gt;</div>
+            <div class="production">&lt;End&gt; &DoubleRightArrow; ;</div>
+
+	<div class="definition">
+    		<p>Все правила относятся к классу праворекурсивных продукций (<span class="math">A &DoubleRightArrow; aB | a | &epsilon;</span>). Может быть представлена 			конечным автоматом.</p>
+	</div>
+        </div>
+    </div>
+</body>
+</html>

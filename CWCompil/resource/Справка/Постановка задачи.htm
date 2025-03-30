@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Курсовая работа: Синтаксический анализатор Console.ReadLine()</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .code {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+        }
+        .valid-examples {
+            margin-top: 15px;
+        }
+        .example {
+            margin: 5px 0;
+            padding: 8px;
+            background-color: #e8f4f8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Цель курсовой работы</h1>
+    <p>Выполнить программную реализацию алгоритма синтаксического анализа функции ввода Console.ReadLine() языка C#.</p>
+
+    <h2>Ввод данных с консоли в C#</h2>
+    <p>В языке C# для считывания пользовательского ввода с консоли используется метод <strong>Console.ReadLine()</strong>. Этот метод ожидает, пока пользователь введет строку и нажмёт Enter, после чего возвращает введённые данные в виде строки (string).</p>
+
+    <div class="code">
+        string userInput = Console.ReadLine();
+    </div>
+
+    <h2>Синтаксический анализатор (парсер)</h2>
+    <p>Парсер будет считать верными следующие записи констант:</p>
+    
+    <div class="valid-examples">
+        <div class="example">"Console.ReadLine();"</div>
+        <div class="example">"Console     .ReadLine ();"</div>
+        <div class="example">"Console   .     ReadLine  (  )  ;"</div>
+    </div>
+</body>
+</html>

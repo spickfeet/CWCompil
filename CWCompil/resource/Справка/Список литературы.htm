@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <title>Список использованных источников</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #222;
+            background-color: #fafafa;
+        }
+        h1 {
+            color: #1a365d;
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        .reference-list {
+            counter-reset: item;
+        }
+        .reference {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            text-indent: -30px;
+            text-align: justify;
+        }
+        .reference:before {
+            content: counter(item) ".";
+            counter-increment: item;
+            padding-right: 10px;
+            color: #2c5282;
+            font-weight: bold;
+        }
+        .author {
+            font-weight: bold;
+        }
+        .title {
+            font-style: italic;
+        }
+        .publisher {
+            font-style: normal;
+        }
+        .electronic {
+            color: #2b6cb0;
+        }
+        .url {
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #4a5568;
+        }
+        .translation {
+            font-size: 0.9em;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="reference-list">
+        <h1>Список использованных источников</h1>
+        
+        <div class="reference">
+            <span class="author">Шорников Ю.В.</span> 
+            <span class="title">Теория и практика языковых процессоров</span> : учеб. пособие / 
+            <span class="author">Ю.В. Шорников</span>. – 
+            <span class="publisher">Новосибирск: Изд-во НГТУ, 2004.</span>
+        </div>
+        
+        <div class="reference">
+            <span class="title">Теория формальных языков и компиляторов</span> 
+            [Электронный ресурс] / Электрон. дан. 
+            <span class="url">URL: https://dispace.edu.nstu.ru/didesk/course/show/8594</span>, 
+            свободный. Яз.рус. <span class="publisher">(дата обращения 01.04.2021)</span>.
+        </div>
+        
+        <div class="reference">
+            <span class="author">Грис Д.</span> 
+            <span class="title">Конструирование компиляторов для цифровых вычислительных машин</span> / 
+            <span class="author">Д. Грис</span> ; 
+            <span class="translation">пер. с англ. Е. Б. Докшицкой, Л. А. Зелениной, Л. Б. Морозовой, В. С. Штаркмана, под ред. Ю. М. Баяковского, Вс. С. Штаркмана</span>. - 
+            <span class="publisher">М., 1975. - 544 с. : табл., схемы</span>
+        </div>
+        
+        <div class="reference">
+            <span class="author">Ахо А. В., Сети Р., Ульман Д.</span> 
+            <span class="title">Компиляторы: Принципы, технологии, инструменты</span> / 
+            <span class="author">А. Ахо, Р. Сети, Д. Ульман</span>. - 
+            <span class="publisher">М., 2003. - 768 с.</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -72,68 +72,6 @@ namespace CWCompil.State
                 sm.State.Enter(sm);
                 return;
             }
-            //if (sm.Tokens[sm.CurrentTokenIndex] == "(")
-            //{
-            //    string[] tokens = { "Console", ".", "ReadLine" };
-            //    for (int i = 0; i < tokens.Length; i++)
-            //    {
-            //        if (sm.CountDel > 3)
-            //        {
-            //            sm.CountDel = 3;
-            //        }
-            //        if (sm.CountDel != 0)
-            //        {
-            //            sm.ErrorsData[sm.ErrorsData.Count - sm.CountDel].Text = sm.ErrorsData[sm.ErrorsData.Count - sm.CountDel].Text.Replace("Отбрасывается", $"Заменяется на \"{tokens[i]}\"");
-            //            sm.CountDel--;
-            //        }
-            //        else
-            //        {
-            //            sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), $" Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}"));
-            //        }
-            //    }
-            //    sm.State = new ReadLineState();
-            //    sm.State.Enter(sm);
-            //    return;
-            //}
-            //if (sm.Tokens[sm.CurrentTokenIndex] == ")")
-            //{
-            //    string[] tokens = { "Console", ".", "ReadLine", "(" };
-            //    for (int i = 0; i < tokens.Length; i++)
-            //    {
-            //        if (sm.CountDel > 4)
-            //        {
-            //            sm.CountDel = 4;
-            //        }
-            //        if (sm.CountDel != 0)
-            //        {
-            //            sm.ErrorsData[sm.ErrorsData.Count - sm.CountDel].Text = sm.ErrorsData[sm.ErrorsData.Count - sm.CountDel].Text.Replace("Отбрасывается", $"Заменяется на \"{tokens[i]}\"");
-            //            sm.CountDel--;
-            //        }
-            //        else
-            //        {
-            //            sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken(), $" Ожидается \"{tokens[i]}\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}"));
-            //        }
-            //    }
-            //    sm
-            //    sm.State = new OpenBracketState();
-            //    sm.State.Enter(sm);
-            //    sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Ожидается \"Console\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \".\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \"ReadLine\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \"(\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
-            //    return;
-            //}
-            //if (sm.Tokens[sm.CurrentTokenIndex] == ";")
-            //{
-            //    sm.State = new CloseBracketState();
-            //    sm.State.Enter(sm);
-            //    sm.ErrorsText += $"Строка: {sm.Line}. Ошибка: Ожидается \"Console\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \".\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \"ReadLine\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \"(\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n" +
-            //        $"Строка: {sm.Line}. Ошибка: Ожидается \")\" перед \"{sm.Tokens[sm.CurrentTokenIndex]}\"\n";
-            //    return;
-            //}
             sm.ErrorsData.Add(new(sm.Line, sm.GetIndexOfCurrentToken() + (sm.CurrentTokenIndex < sm.Tokens.Count ? sm.Offsets[sm.CurrentTokenIndex] : 0), $"\"{sm.Tokens[sm.CurrentTokenIndex]}\" не является ожидаемым. (Отбрасывается)"));
             sm.CountDel++;
         }

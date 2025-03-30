@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <title>Тестовые примеры анализатора</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .test-case {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .input {
+            font-family: Consolas, monospace;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+        .output {
+            font-family: Consolas, monospace;
+            background-color: #fff8e1;
+            padding: 15px;
+            border-left: 4px solid #ffa000;
+        }
+        .error {
+            color: #d32f2f;
+            margin: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .divider {
+            border-top: 1px dashed #b0bec5;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-case">
+        <h1>Тестовые примеры</h1>
+        
+        <div class="example">
+            <h3>Пример 1:</h3>
+            <div class="input"><strong>Ввод:</strong> con.READ(;</div>
+            <div class="output">
+                <strong>Результат:</strong>
+                <div class="error">Строка: 1 Глобальный индекс: 0 Ошибка "con" не является ожидаемым. <span class="correction">(Заменяется на "Console")</span></div>
+                <div class="error">Строка: 1 Глобальный индекс: 4 Ошибка "READ" не является ожидаемым. <span class="correction">(Заменяется на "ReadLine")</span></div>
+                <div class="error">Строка: 1 Глобальный индекс: 9 Ошибка Ожидается ")" перед ";"</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="example">
+            <h3>Пример 2:</h3>
+            <div class="input"><strong>Ввод:</strong> .ReadLine());</div>
+            <div class="output">
+                <strong>Результат:</strong>
+                <div class="error">Строка: 1 Глобальный индекс: 0 Ошибка Ожидается "Console" перед "."</div>
+                <div class="error">Строка: 1 Глобальный индекс: 11 Ошибка ")" не является ожидаемым. <span class="correction">(Отбрасывается)</span></div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="example">
+            <h3>Пример 3:</h3>
+            <div class="input"><strong>Ввод:</strong> Console.Read</div>
+            <div class="output">
+                <strong>Результат:</strong>
+                <div class="error">Строка: 1 Глобальный индекс: 8 Ошибка "Read" не является ожидаемым. <span class="correction">(Заменяется на "ReadLine")</span></div>
+                <div class="error">Строка: 1 Глобальный индекс: 12 Ошибка В конце ожидается "("</div>
+                <div class="error">Строка: 1 Глобальный индекс: 12 Ошибка В конце ожидается ")"</div>
+                <div class="error">Строка: 1 Глобальный индекс: 12 Ошибка В конце ожидается ";"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

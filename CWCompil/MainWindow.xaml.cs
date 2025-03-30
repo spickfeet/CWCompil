@@ -102,7 +102,106 @@ namespace CWCompil
         {
             var p = new Process();
             string currentDirectory = Directory.GetCurrentDirectory();
-            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "new_project.chm");
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Меню.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void TaskInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Постановка задачи.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void GrammarInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Грамматика.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void ClassificationInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Классификация грамматики.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void AnalysisInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Метод анализа.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void ErrorsFixInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Диагностика и нейтрализация ошибок.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void TestsInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Тестовые примеры.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void LiteratureInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Список литературы.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void SourceCodeInfo(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "Исходный код программы.htm");
+            p.StartInfo = new ProcessStartInfo(fullPath)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+        private void About(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fullPath = System.IO.Path.Combine(currentDirectory, "resource", "Справка", "О программе.htm");
             p.StartInfo = new ProcessStartInfo(fullPath)
             {
                 UseShellExecute = true

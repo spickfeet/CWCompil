@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <title>Информация о программе</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 35px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .program-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .feature-list {
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 12px;
+        }
+        .menu-item {
+            font-weight: bold;
+            color: #1a365d;
+        }
+        .command {
+            font-family: Consolas, monospace;
+            background-color: #f0f7ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-left: 3px solid #1a73e8;
+        }
+        .technical-spec {
+            background-color: #f5f9ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border: 1px solid #d0e3ff;
+        }
+        .ui-element {
+            display: inline-block;
+            background-color: #e3f2fd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 3px 0;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="program-info">
+        <h1>Информация о программе</h1>
+        
+        <p>Программа написана в рамках первой лабораторной работы по дисциплине <strong>"Теория формальных языков и компиляторов"</strong>.</p>
+        <p>Программа доработана в рамках курсовой работы.</p>
+        
+        <div class="technical-spec">
+            <h2>Техническое задание</h2>
+            <p>Разработать приложение – текстовый редактор, дополненный функциями языкового процессора.</p>
+            <p>Приложение имеет графический интерфейс пользователя.</p>
+            <p><strong>Язык реализации:</strong> C#.</p>
+        </div>
+        
+        <h2>Функциональные элементы</h2>
+        
+        <ol class="feature-list">
+            <li>
+                <span class="menu-item">Основное меню программы</span>
+                <ul>
+                    <li>Пункт меню <span class="ui-element">Текст</span> - при вызове команд этого меню открываются окна с соответствующей информацией по курсовой работе <em>"Функция ввода Console.ReadLine() языка C#"</em></li>
+                </ul>
+            </li>
+            
+            <li>
+                <span class="menu-item">Панель инструментов</span>
+                <p>Содержит кнопки вызова часто используемых пунктов меню:</p>
+                <ul>
+                    <li><span class="ui-element">Файл</span> - <span class="command">Создать</span>, <span class="command">Открыть</span>, <span class="command">Сохранить</span>, <span class="command">Сохранить как</span>, <span class="command">Выход</span></li>
+                    <li><span class="ui-element">Правка</span> - <span class="command">Отменить</span>, <span class="command">Вернуть</span>, <span class="command">Копировать</span>, <span class="command">Вырезать</span>, <span class="command">Вставить</span>, <span class="command">Удалить всё</span></li>
+                    <li><span class="ui-element">Пуск</span> - команда для запуска анализатора текста</li>
+                    <li><span class="ui-element">Вызов справки</span> - запускает справочную систему с описанием всех реализованных функций меню</li>
+                </ul>
+            </li>
+            
+            <li>
+                <span class="menu-item">Окно ввода/редактирования текста</span>
+                <p>Область редактирования представляет текстовый редактор. Команды меню <span class="ui-element">Файл</span> и <span class="ui-element">Правка</span> работают с содержимым этой области.</p>
+            </li>
+            
+            <li>
+                <span class="menu-item">Окно отображения результатов</span>
+                <p>Область для вывода сообщений и результатов работы языкового процессора. Ввод текста в этой области запрещен.</p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

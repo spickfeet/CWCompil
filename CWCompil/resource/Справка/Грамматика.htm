@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <title>‘ормальное определение грамматики Console.ReadLine()</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .grammar {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .production {
+            font-family: Consolas, monospace;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #2980b9;
+        }
+        .symbol {
+            font-style: italic;
+        }
+        .terminal {
+            color: #D32F2F;
+            font-weight: bold;
+        }
+        .non-terminal {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        .definition {
+            margin-top: 20px;
+        }
+        .definition dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .definition dd {
+            margin-left: 20px;
+        }
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>–азработка грамматики</h2>
+        
+        <div class="grammar">
+            <p>ќпределим грамматику дл€ функции <span class="terminal">Console.ReadLine()</span> €зыка C# G[ЛConЫ] в нотации ’омского с продукци€ми P:</p>
+            
+            <div class="production">&lt;Con&gt; &DoubleRightArrow; Console&lt;Point&gt;</div>
+            <div class="production">&lt;Point&gt; &DoubleRightArrow; .&lt;ReadLn&gt;</div>
+            <div class="production">&lt;ReadLn&gt; &DoubleRightArrow; ReadLine&lt;OpenBr&gt;</div>
+            <div class="production">&lt;OpenBr&gt; &DoubleRightArrow; (&lt;CloseBr&gt;</div>
+            <div class="production">&lt;CloseBr&gt; &DoubleRightArrow; )&lt;End&gt;</div>
+            <div class="production">&lt;End&gt; &DoubleRightArrow; ;</div>
+            
+            <div class="definition">
+                <p>—леду€ введенному формальному определению грамматики, представим G[ЛConЫ] ее составл€ющими:</p>
+                
+                <dl>
+                    <dt>Z = &lt;Con&gt;</dt>
+                    <dt>V<sub>T</sub> = { Console, ., ReadLine, (, ), ; }</dt>
+                    <dt>V<sub>N</sub> = { &lt;Con&gt;, &lt;Point&gt;, &lt;ReadLn&gt;, &lt;OpenBr&gt;, &lt;CloseBr&gt;, &lt;End&gt; }</dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

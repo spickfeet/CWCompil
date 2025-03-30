@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализатор Console.ReadLine()</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        .nav-block {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: transform 0.3s;
+        }
+        .nav-block:hover {
+            transform: translateY(-5px);
+        }
+        .block-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .nav-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .nav-item {
+            margin: 15px 0;
+        }
+        .nav-link {
+            display: block;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background-color: #e3f2fd;
+            border-left-color: #1a73e8;
+            transform: translateX(5px);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        .main-title {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="main-title">Анализатор Console.ReadLine()</h1>
+        <p class="subtitle">Программная реализация синтаксического анализатора</p>
+    </div>
+
+    <div class="container">
+        <!-- Блок "Текст" -->
+        <div class="nav-block">
+            <h2 class="block-title">Текст</h2>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="Постановка задачи.htm" class="nav-link">Постановка задачи</a></li>
+                <li class="nav-item"><a href="Грамматика.htm" class="nav-link">Грамматика</a></li>
+                <li class="nav-item"><a href="Классификация грамматики.htm" class="nav-link">Классификация грамматики</a></li>
+                <li class="nav-item"><a href="Метод анализа.htm" class="nav-link">Метод анализа</a></li>
+                <li class="nav-item"><a href="Диагностика и нейтрализация ошибок.htm" class="nav-link">Диагностика и нейтрализация ошибок</a></li>
+                <li class="nav-item"><a href="Тестовые примеры.htm" class="nav-link">Тестовый пример</a></li>
+                <li class="nav-item"><a href="Список литературы.htm" class="nav-link">Список литературы</a></li>
+                <li class="nav-item"><a href="Исходный код программы.htm" class="nav-link">Исходный код программы</a></li>
+            </ul>
+        </div>
+
+        <!-- Блок "Справка" -->
+        <div class="nav-block">
+            <h2 class="block-title">Справка</h2>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="Инструменты.htm" class="nav-link">Инструменты</a></li>
+                <li class="nav-item"><a href="О программе.htm" class="nav-link">О программе</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

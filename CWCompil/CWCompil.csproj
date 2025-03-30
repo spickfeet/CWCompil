@@ -55,40 +55,46 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="resource\Справка\Index.hhk">
+    <None Update="resource\Справка\images\Граф.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Intro.htm">
+    <None Update="resource\Справка\images\Древо разбора.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Intro2.htm">
+    <None Update="resource\Справка\images\Недостроенный куст.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Intro3.htm">
+    <None Update="resource\Справка\Грамматика.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\new_project.chm">
+    <None Update="resource\Справка\Диагностика и нейтрализация ошибок.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\new_project.chw">
+    <None Update="resource\Справка\Инструменты.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\new_project.hhp">
+    <None Update="resource\Справка\Исходный код программы.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Table of Contents.hhc">
+    <None Update="resource\Справка\Классификация грамматики.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Открыть.htm">
+    <None Update="resource\Справка\Меню.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Создать.htm">
+    <None Update="resource\Справка\Метод анализа.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Сохранить.htm">
+    <None Update="resource\Справка\О программе.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="resource\Справка\Файл, справка.htm">
+    <None Update="resource\Справка\Постановка задачи.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resource\Справка\Список литературы.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resource\Справка\Тестовые примеры.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -33,12 +33,20 @@
                 <MenuItem Header="Удалить всё" Click="Clear"></MenuItem>
             </MenuItem>
             <MenuItem Header="Текст">
+                <MenuItem Header="Постановка задачи" Click="TaskInfo"></MenuItem>
+                <MenuItem Header="Грамматика" Click="GrammarInfo"></MenuItem>
+                <MenuItem Header="Классификация грамматики" Click="ClassificationInfo"></MenuItem>
+                <MenuItem Header="Метод анализа" Click="AnalysisInfo"></MenuItem>
+                <MenuItem Header="Диагностика и нейтрализация ошибок" Click="ErrorsFixInfo"></MenuItem>
+                <MenuItem Header="Тестовый пример" Click="TestsInfo"></MenuItem>
+                <MenuItem Header="Список литературы" Click="LiteratureInfo"></MenuItem>
+                <MenuItem Header="Исходный код программы" Click="SourceCodeInfo"></MenuItem>
             </MenuItem>
             <MenuItem Header="Пуск" Command="{Binding Start}"/>
             
             <MenuItem Header="Справка">
                 <MenuItem Header="Вызов справки" Click="Help"></MenuItem>
-                <MenuItem Header="О программе"></MenuItem>
+                <MenuItem Header="О программе" Click="About"></MenuItem>
             </MenuItem>
         </Menu>
 
