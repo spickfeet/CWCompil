@@ -65,22 +65,22 @@
         <h2>–азработка грамматики</h2>
         
         <div class="grammar">
-            <p>ќпределим грамматику дл€ функции <span class="terminal">Console.ReadLine()</span> €зыка C# G[ЛConЫ] в нотации ’омского с продукци€ми P:</p>
+            <p>ќпределим грамматику дл€ функции <span class="terminal">Console.ReadLine()</span> €зыка C# G[ЛCONЫ] в нотации ’омского с продукци€ми P:</p>
             
-            <div class="production">&lt;Con&gt; &DoubleRightArrow; Console&lt;Point&gt;</div>
-            <div class="production">&lt;Point&gt; &DoubleRightArrow; .&lt;ReadLn&gt;</div>
-            <div class="production">&lt;ReadLn&gt; &DoubleRightArrow; ReadLine&lt;OpenBr&gt;</div>
-            <div class="production">&lt;OpenBr&gt; &DoubleRightArrow; (&lt;CloseBr&gt;</div>
-            <div class="production">&lt;CloseBr&gt; &DoubleRightArrow; )&lt;End&gt;</div>
-            <div class="production">&lt;End&gt; &DoubleRightArrow; ;</div>
+            <div class="production">&lt;CON&gt; &DoubleRightArrow; Console&lt;POINT&gt;</div>
+            <div class="production">&lt;POINT&gt; &DoubleRightArrow; .&lt;READLN&gt;</div>
+            <div class="production">&lt;READLN&gt; &DoubleRightArrow; ReadLine&lt;OPENBR&gt;</div>
+            <div class="production">&lt;OPENBR&gt; &DoubleRightArrow; (&lt;CLOSEBR&gt;</div>
+            <div class="production">&lt;CLOSEBR&gt; &DoubleRightArrow; )&lt;END&gt;</div>
+            <div class="production">&lt;END&gt; &DoubleRightArrow; ;</div>
             
             <div class="definition">
-                <p>—леду€ введенному формальному определению грамматики, представим G[ЛConЫ] ее составл€ющими:</p>
+                <p>—леду€ введенному формальному определению грамматики, представим G[ЛCONЫ] ее составл€ющими:</p>
                 
                 <dl>
-                    <dt>Z = &lt;Con&gt;</dt>
+                    <dt>Z = &lt;CON&gt;</dt>
                     <dt>V<sub>T</sub> = { Console, ., ReadLine, (, ), ; }</dt>
-                    <dt>V<sub>N</sub> = { &lt;Con&gt;, &lt;Point&gt;, &lt;ReadLn&gt;, &lt;OpenBr&gt;, &lt;CloseBr&gt;, &lt;End&gt; }</dt>
+                    <dt>V<sub>N</sub> = { &lt;CON&gt;, &lt;POINT&gt;, &lt;READLN&gt;, &lt;OPENBR&gt;, &lt;CLOSEBR&gt;, &lt;END&gt; }</dt>
                 </dl>
             </div>
         </div>
