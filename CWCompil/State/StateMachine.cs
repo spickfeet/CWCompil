@@ -115,9 +115,9 @@ namespace CWCompil.State
             for (; IsStopped == false; CurrentTokenIndex++) 
             {
                 State.Enter(this);
-                if (CurrentTokenIndex < Tokens .Count && Tokens[CurrentTokenIndex] == "\n")
+                if (CurrentTokenIndex < Tokens.Count && Tokens[CurrentTokenIndex].Contains("\n"))
                 {
-                    Line++;
+                    Line += Tokens[CurrentTokenIndex].Count(x => x == '\n');
                 }
             }
         }
